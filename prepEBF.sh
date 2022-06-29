@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF | sudo tee /etc/systemd/system/sys-fs-bpf.mount
+cat <<EOF |  tee /etc/systemd/system/sys-fs-bpf.mount
 [Unit]
 Description=BPF mounts
 DefaultDependencies=no
