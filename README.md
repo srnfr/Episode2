@@ -7,7 +7,8 @@ Liens vers [le replay](https://app.livestorm.co/bluetrusty/episode-2-securite-de
 # Contenu
 - `webdemo.yml` => echo-server en LB
 - `loop.sh` et `unloop.sh` => crée 100 deployments
-- `toEPBF.sh` => `bascule` le Dataplane en EBF sur un AKS Azure CNI +Calico en NP
+- `deploy-prepEBF.sh` => active eBPF sur les noeuds du cluer kubernetes
+- `toEPBF.sh` => `bascule` le Dataplane en EBF sur un AKS Azure CNI +Calico en NetworkPolicy
 - `toKube-Proxy.sh` => retour au Dataplane standard (kube-proxy)
 - `calico-ebpf-configmap.yaml` => à modifier pour indiquer l'IP de l'API Server (nécessaire quand Calico remplace kube-proxy)
 
