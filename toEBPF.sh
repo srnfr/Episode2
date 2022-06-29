@@ -1,5 +1,20 @@
 #!/bin/bash
 
+echo "Fill configmap"
+IP_TO_BE_MODIFIED=$(kubectl cluster-info | head -1 | sed -e 's/.*https:\/\///' | cut -d: -f1)
+PORT_TO_BE_MODIFIED=$(kubectl cluster-info | head -1 | sed -e 's/.*https:\/\///' | cut -d: -f2)
+
+PORT_TO_BE_MODIFIED=443
+
+echo "IP_TO_BE_MODIFIED => $IP_TO_BE_MODIFIED"
+echo "PORT_TO_BE_MODIFIED => $PORT_TO_BE_MODIFIED"
+
+sed -i'.bak' -e "s/<IP_TO_BE_MODIFIED>/$IP_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
+sed -i'.bak' -e "s/<PORT_TO_BE_MODIFIED>/$PORT_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
+
+echo "---"
+exit
+
 kubectl apply -f calico-ebpf-configmap.yaml -n tigera-operator
 
 echo "Sleep 10sec.."
