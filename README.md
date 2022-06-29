@@ -13,7 +13,7 @@ Liens vers [le replay](https://app.livestorm.co/bluetrusty/episode-2-securite-de
 - `calico-ebpf-configmap.yaml` => à modifier pour indiquer l'IP de l'API Server (nécessaire quand Calico remplace kube-proxy)
 
 
-# Liste des [webinars Bluetrusty](https://app.livestorm.co/bluetrusty) sur "le Réseau et Kubernetes"
+# Liste des [webinars Bluetrusty](https://webinars.bluetrusty.com) sur "le Réseau et Kubernetes"
 - [Episode 1](https://github.com/srnfr/Episode1) Constitution du réseau interne et connexion avec l'extérieur
 - [Episode 2](https://github.com/srnfr/Episode2) KubeProxy, CNI, eBPF
 - [Episode 3](https://github.com/srnfr/Episode3) Standard Network Policy
