@@ -1,6 +1,8 @@
 #!/bin/bash
+## A FAIRE SUR CHAQUE NOEUD DU CLUSTER
+## S'Y CONNECTER PAR EXEMPLE AVEC NSENTER
 
-cat <<EOF | sudo tee /etc/systemd/system/sys-fs-bpf.mount
+cat <<EOF | tee /etc/systemd/system/sys-fs-bpf.mount
 [Unit]
 Description=BPF mounts
 DefaultDependencies=no
