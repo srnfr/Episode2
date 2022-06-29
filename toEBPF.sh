@@ -32,3 +32,5 @@ calicoctl patch felixconfiguration default --patch='{"spec": {"bpfKubeProxyIptab
 calicoctl get felixconfiguration default --allow-version-mismatch --output=yaml
 
 kubectl get installation.operator.tigera.io default  -o yaml | grep linuxDataplane 
+
+rm -f calico-ebpf-configmap.yaml
