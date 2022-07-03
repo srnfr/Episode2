@@ -14,7 +14,6 @@ sed -i'.bak' -e "s/<IP_TO_BE_MODIFIED>/$IP_TO_BE_MODIFIED/" calico-ebpf-configma
 sed -i'.bak' -e "s/<PORT_TO_BE_MODIFIED>/$PORT_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
 
 echo "---"
-exit
 
 kubectl apply -f calico-ebpf-configmap.yaml -n tigera-operator
 
