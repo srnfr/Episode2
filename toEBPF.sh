@@ -9,12 +9,16 @@ PORT_TO_BE_MODIFIED=443
 echo "IP_TO_BE_MODIFIED => $IP_TO_BE_MODIFIED"
 echo "PORT_TO_BE_MODIFIED => $PORT_TO_BE_MODIFIED"
 
+rm -f calico-ebpf-configmap.yaml
 cp calico-ebpf-configmap.yaml.org calico-ebpf-configmap.yaml
-sed -i'.bak' -e "s/<IP_TO_BE_MODIFIED>/$IP_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
-sed -i'.bak' -e "s/<PORT_TO_BE_MODIFIED>/$PORT_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
+
+## SPECIAL SED FOR MACOS, see https://stackoverflow.com/questions/7573368/in-place-edits-with-sed-on-os-x
+sed -i '' "s/<IP_TO_BE_MODIFIED>/$IP_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
+sed -i '' "s/<PORT_TO_BE_MODIFIED>/$PORT_TO_BE_MODIFIED/" calico-ebpf-configmap.yaml
 
 echo "---"
-
+cat calico-ebpf-configmap.yaml
+echo "--"
 kubectl apply -f calico-ebpf-configmap.yaml -n tigera-operator
 
 echo "Sleep 10sec.."

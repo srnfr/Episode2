@@ -3,7 +3,7 @@
 
 
 ## Pod Remote
-export EBPF_INTERESTING_IP="10.224.0.47"
+export EBPF_INTERESTING_IP="77"
 ##export EBPF_INTERESTING_IP=10.224
 ## Pod Local
 #export EBPF_INTERESTING_IP=10.240.0.13
